@@ -28,7 +28,7 @@ class Son:
     
     def heredity(self):
         print(self.allMoney / howManySons)
-
+        
   
 Ali = Grandpa(allMoneysGrandpa)
 soghra = Grandma(True, allMoneysGrandpa)
