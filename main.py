@@ -29,6 +29,14 @@ class Son:
     def heredity(self):
         print(self.allMoney / howManySons)
         
+class Daugther:
+    def __init__(self, allMoney, howManyDaugther):
+        self.allMoney = allMoney
+        self.howManySons = howManySons
+    
+    def heredity(self):
+        print(self.allMoney / howManySons)
+        
   
 Ali = Grandpa(allMoneysGrandpa)
 soghra = Grandma(True, allMoneysGrandpa)
