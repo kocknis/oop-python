@@ -8,7 +8,7 @@ howManySons = int(input("how many sons does it has : "))
 #     isMarriedSons.append(isMarriedSon)
 
 # sonShare = 16
-# daugtherShare = 8
+# DaughterShare = 8
 # grandmaShare = 1
 
 allShare = howManySons * 16 + howManyDaughter * 8 + 1
@@ -38,8 +38,8 @@ class Son:
         print((self.allMoney / allShare) * 16 * howManySons)
 
 
-class Daugther:
-    def __init__(self, allMoney, howManyDaugther, allShare):
+class Daughter:
+    def __init__(self, allMoney, howManyDaughter, allShare):
         self.allMoney = allMoney
         self.howManySons = howManySons
         self.allShare = allShare
@@ -57,7 +57,7 @@ if howManySons != 0:
         sons.append(son)
     
 if howManyDaughter != 0:
-    duaghters = []
+    daughters = []
     for i in range(howManyDaughter):
         daughter = Daughter(allMoneysGrandpa, howManyDaughter, allShare)
         daughters.append(daughter)
@@ -69,3 +69,6 @@ if isAliveGrandma == 'y' or 'yes':
 
 for son in sons:
     son.heredity()
+
+for daughter in daughters:
+    daughter.heredity()
