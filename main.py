@@ -7,6 +7,9 @@ howManySons = int(input('how many sons does it has : '))
 #     isMarriedSon = input(f'is Married Son {i + 1} : y/n  ')
 #     isMarriedSons.append(isMarriedSon)
 
+sonShare = 16
+daugtherShare = 8
+grandmaShare = 1
 class Grandpa:
     def __init__(self, allMoney):
         self.allMoney = allMoney
