@@ -52,18 +52,18 @@ Ali = Grandpa(allMoneysGrandpa)
 if howManySons != 0:
     sons = []
     for i in range(howManySons):
-        son = Son(False, allMoneysGrandpa, howManySons)
+        son = Son(False, allMoneysGrandpa, howManySons, sonShare)
         sons.append(son)
     
 if howManyDaughter != 0:
     duaghters = []
     for i in range(howManyDaughter):
-        daughter = Daughter(allMoneysGrandpa, howManyDaughter)
+        daughter = Daughter(allMoneysGrandpa, howManyDaughter, daugtherShare)
         daughters.append(daughter)
     
 
 if isAliveGrandma == 'y' or 'yes':
-    soghra = Grandma(isAliveGrandma, allMoneysGrandpa)
+    soghra = Grandma(isAliveGrandma, allMoneysGrandpa, grandmaShare)
     soghra.heredity()
 
 for son in sons:
