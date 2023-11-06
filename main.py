@@ -1,6 +1,6 @@
-# howManyDaughter = int(input('how many daughter does it has : '))
 allMoneysGrandpa = int(input("how mauch grandpa had money : "))
-# isAliveGrandma = input('is alive Grandma : y/n  ')
+isAliveGrandma = input('is alive Grandma : y/n  ')
+howManyDaughter = int(input('how many daughter does it has : '))
 howManySons = int(input("how many sons does it has : "))
 # isMarriedSons = []
 # for i in range(howManySons):
@@ -48,12 +48,23 @@ class Daugther:
 
 
 Ali = Grandpa(allMoneysGrandpa)
-soghra = Grandma(True, allMoneysGrandpa)
-sons = []
-for i in range(howManySons):
-    son = Son(False, allMoneysGrandpa, howManySons)
-    sons.append(son)
 
-soghra.heredity()
+if howManySons != 0:
+    sons = []
+    for i in range(howManySons):
+        son = Son(False, allMoneysGrandpa, howManySons)
+        sons.append(son)
+    
+if howManyDaughter != 0:
+    duaghters = []
+    for i in range(howManyDaughter):
+        daughter = Daughter(allMoneysGrandpa, howManyDaughter)
+        daughters.append(daughter)
+    
+
+if isAliveGrandma == 'y' or 'yes':
+    soghra = Grandma(isAliveGrandma, allMoneysGrandpa)
+    soghra.heredity()
+
 for son in sons:
     son.heredity()
