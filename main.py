@@ -7,10 +7,11 @@ howManySons = int(input("how many sons does it has : "))
 #     isMarriedSon = input(f'is Married Son {i + 1} : y/n  ')
 #     isMarriedSons.append(isMarriedSon)
 
-sonShare = 16
-daugtherShare = 8
-grandmaShare = 1
+# sonShare = 16
+# daugtherShare = 8
+# grandmaShare = 1
 
+allShare = howManySons * 16 + howManyDaughter * 8 + 1
 
 class Grandpa:
     def __init__(self, allMoney):
@@ -18,33 +19,33 @@ class Grandpa:
 
 
 class Grandma(Grandpa):
-    def __init__(self, isAlive, allMoney, grandmaShare):
+    def __init__(self, isAlive, allMoney, allShare):
         super().__init__(allMoney)
         self.isAlive = isAlive
 
     def heredity(self):
-        print(self.allMoney)
+        print((self.allMoney / allShare))
 
 
 class Son:
-    def __init__(self, isMarried, allMoney, howManySons, sonShare):
+    def __init__(self, isMarried, allMoney, howManySons, allShare):
         self.allMoney = allMoney
         self.isMarried = isMarried
         self.howManySons = howManySons
-        self.sonShare = sonShare
+        self.allShare = allShare
 
     def heredity(self):
-        print(self.allMoney / (howManySons * sonShare))
+        print((self.allMoney / allShare) * 16 * howManySons)
 
 
 class Daugther:
-    def __init__(self, allMoney, howManyDaugther, daugtherShare):
+    def __init__(self, allMoney, howManyDaugther, allShare):
         self.allMoney = allMoney
         self.howManySons = howManySons
-        self.daugtherShare = daugtherShare
+        self.allShare = allShare
 
     def heredity(self):
-        print(self.allMoney / (howManySons * daugtherShare))
+        print((self.allMoney / allShare) * 8 * howManyDaughter)
 
 
 Ali = Grandpa(allMoneysGrandpa)
@@ -52,18 +53,18 @@ Ali = Grandpa(allMoneysGrandpa)
 if howManySons != 0:
     sons = []
     for i in range(howManySons):
-        son = Son(False, allMoneysGrandpa, howManySons, sonShare)
+        son = Son(False, allMoneysGrandpa, howManySons, allShare)
         sons.append(son)
     
 if howManyDaughter != 0:
     duaghters = []
     for i in range(howManyDaughter):
-        daughter = Daughter(allMoneysGrandpa, howManyDaughter, daugtherShare)
+        daughter = Daughter(allMoneysGrandpa, howManyDaughter, allShare)
         daughters.append(daughter)
     
 
 if isAliveGrandma == 'y' or 'yes':
-    soghra = Grandma(isAliveGrandma, allMoneysGrandpa, grandmaShare)
+    soghra = Grandma(isAliveGrandma, allMoneysGrandpa, allShare)
     soghra.heredity()
 
 for son in sons:
