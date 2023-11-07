@@ -11,7 +11,10 @@ howManySons = int(input("how many sons does it has : "))
 # DaughterShare = 8
 # grandmaShare = 1
 
-allShare = howManySons * 16 + howManyDaughter * 8 + 1
+allShare = howManySons * 16 + howManyDaughter * 8
+
+if isAliveGrandma == 'y' or 'yes':
+    allShare += 1
 
 class Grandpa:
     def __init__(self, allMoney):
