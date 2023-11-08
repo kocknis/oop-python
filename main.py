@@ -30,7 +30,7 @@ class Son:
         self.allShare = allShare
 
     def heredity(self):
-        print((self.allMoney / allShare) * 16 * howManySons)
+        print((self.allMoney / allShare) * 16 , end=" , ")
 
 
 class Daughter:
@@ -40,7 +40,7 @@ class Daughter:
         self.allShare = allShare
 
     def heredity(self):
-        print((self.allMoney / allShare) * 8 * howManyDaughter)
+        print((self.allMoney / allShare) * 8 , end=" , ")
 
 
 Ali = Grandpa(allMoneysGrandpa)
@@ -64,6 +64,6 @@ if isAliveGrandma == 'y' or 'yes':
 
 for son in sons:
     son.heredity()
-
+print()
 for daughter in daughters:
     daughter.heredity()
