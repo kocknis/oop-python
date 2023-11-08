@@ -30,7 +30,11 @@ class Son:
         self.allShare = allShare
 
     def heredity(self):
-        print((self.allMoney / allShare) * 16 , end=" , ")
+        print(self.__round__((self.allMoney / allShare) * 16) , end=" , ")
+        
+    # def __round__(self):
+    #     return round((self.allMoney / allShare) * 16)
+        
 
 
 class Daughter:
