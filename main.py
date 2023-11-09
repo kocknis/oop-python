@@ -4,7 +4,7 @@ howManyDaughter = int(input('how many daughter does it has : '))
 howManySons = int(input("how many sons does it has : "))
 
 
-allShare = howManySons  + howManyDaughter * 2
+allShare = howManySons * 2 + howManyDaughter
 
 grandmaShare = allMoneysGrandpa / 8
 
