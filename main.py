@@ -4,10 +4,14 @@ howManyDaughter = int(input('how many daughter does it has : '))
 howManySons = int(input("how many sons does it has : "))
 
 
-allShare = howManySons * 16 + howManyDaughter * 8
+allShare = howManySons  + howManyDaughter * 2
+
+grandmaShare = allMoneysGrandpa / 8
 
 if isAliveGrandma == 'y' or 'yes':
-    allShare += 1
+    allMoneysGrandpa = allMoneysGrandpa / 8 * 7
+    
+print(allMoneysGrandpa)
 
 class Grandpa:
     def __init__(self, allMoney):
@@ -15,12 +19,12 @@ class Grandpa:
 
 
 class Grandma(Grandpa):
-    def __init__(self, isAlive, allMoney, allShare):
+    def __init__(self, isAlive, allMoney, grandmaShare):
         super().__init__(allMoney)
         self.isAlive = isAlive
 
     def heredity(self):
-        print((self.allMoney / allShare))
+        print(grandmaShare)
 
 
 class Son:
@@ -30,7 +34,7 @@ class Son:
         self.allShare = allShare
 
     def heredity(self):
-        print(self.__round__((self.allMoney / allShare) * 16) , end=" , ")
+        print((self.allMoney / allShare) * 2 , end=" , ")
         
     # def __round__(self):
     #     return round((self.allMoney / allShare) * 16)
@@ -44,7 +48,7 @@ class Daughter:
         self.allShare = allShare
 
     def heredity(self):
-        print((self.allMoney / allShare) * 8 , end=" , ")
+        print(self.allMoney / allShare , end=" , ")
 
 
 Ali = Grandpa(allMoneysGrandpa)
@@ -63,7 +67,7 @@ if howManyDaughter != 0:
     
 
 if isAliveGrandma == 'y' or 'yes':
-    soghra = Grandma(isAliveGrandma, allMoneysGrandpa, allShare)
+    soghra = Grandma(isAliveGrandma, allMoneysGrandpa, grandmaShare)
     soghra.heredity()
 
 for son in sons:
