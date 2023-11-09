@@ -1,17 +1,21 @@
 allMoneysGrandpa = int(input("how mauch grandpa had money : "))
-isAliveGrandma = input('is alive Grandma : y/n  ')
-howManyDaughter = int(input('how many daughter does it has : '))
+isAliveGrandma = input("is alive Grandma : y/n  ")
+howManyDaughter = int(input("how many daughter does it has : "))
 howManySons = int(input("how many sons does it has : "))
 
 
 allShare = howManySons * 2 + howManyDaughter
 
-grandmaShare = allMoneysGrandpa / 8
 
-if isAliveGrandma == 'y' or 'yes':
-    allMoneysGrandpa = allMoneysGrandpa / 8 * 7
-    
+
+if isAliveGrandma == "y":
+    grandmaShare = allMoneysGrandpa / 8
+    allMoneysGrandpa = allMoneysGrandpa - grandmaShare
+elif isAliveGrandma == 'n':
+    allMoneysGrandpa = allMoneysGrandpa
+
 print(allMoneysGrandpa)
+
 
 class Grandpa:
     def __init__(self, allMoney):
@@ -34,11 +38,10 @@ class Son:
         self.allShare = allShare
 
     def heredity(self):
-        print((self.allMoney / allShare) * 2 , end=" , ")
-        
+        print((self.allMoney / allShare) * 2, end=" , ")
+
     # def __round__(self):
     #     return round((self.allMoney / allShare) * 16)
-        
 
 
 class Daughter:
@@ -48,7 +51,7 @@ class Daughter:
         self.allShare = allShare
 
     def heredity(self):
-        print(self.allMoney / allShare , end=" , ")
+        print(self.allMoney / allShare, end=" , ")
 
 
 Ali = Grandpa(allMoneysGrandpa)
@@ -57,21 +60,25 @@ if howManySons != 0:
     sons = []
     for i in range(howManySons):
         son = Son(allMoneysGrandpa, howManySons, allShare)
-        sons.append(son)
-    
+        sons.append(son) 
+
 if howManyDaughter != 0:
     daughters = []
     for i in range(howManyDaughter):
         daughter = Daughter(allMoneysGrandpa, howManyDaughter, allShare)
         daughters.append(daughter)
-    
 
-if isAliveGrandma == 'y' or 'yes':
+
+if isAliveGrandma == "y":
     soghra = Grandma(isAliveGrandma, allMoneysGrandpa, grandmaShare)
     soghra.heredity()
 
+
+
 for son in sons:
     son.heredity()
+    
 print()
+
 for daughter in daughters:
     daughter.heredity()
