@@ -9,7 +9,7 @@ allShare = howManySons * 2 + howManyDaughter
 
 
 if isAliveGrandma == "y":
-    grandmaShare = allMoneysGrandpa / 8
+    grandmaShare = int(allMoneysGrandpa / 8)
     allMoneysGrandpa = allMoneysGrandpa - grandmaShare
 elif isAliveGrandma == 'n':
     allMoneysGrandpa = allMoneysGrandpa
@@ -38,10 +38,8 @@ class Son:
         self.allShare = allShare
 
     def heredity(self):
-        print((self.allMoney / allShare) * 2, end=" , ")
+        print(int((self.allMoney / allShare) * 2), end=" , ")
 
-    # def __round__(self):
-    #     return round((self.allMoney / allShare) * 16)
 
 
 class Daughter:
@@ -51,7 +49,7 @@ class Daughter:
         self.allShare = allShare
 
     def heredity(self):
-        print(self.allMoney / allShare, end=" , ")
+        print(int(self.allMoney / allShare), end=" , ")
 
 
 Ali = Grandpa(allMoneysGrandpa)
