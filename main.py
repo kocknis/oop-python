@@ -29,7 +29,6 @@ class Grandpa:
 
 class Grandma():
     def __init__(self, isAlive, allMoney, grandmaShare):
-        super().__init__(allMoney)
         self.isAlive = isAlive
 
     def heredity(self):
