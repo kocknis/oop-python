@@ -1,12 +1,17 @@
 allMoneysGrandpa = int(input("how mauch grandpa had money : "))
 isAliveGrandma = input("is alive Grandma : y/n  ")
+isAliveMother = input("is alive mother : y/n  ")
+isAliveFather = input("is alive Father : y/n  ")
 howManyDaughter = int(input("how many daughter does it has : "))
 howManySons = int(input("how many sons does it has : "))
 
 
 allShare = howManySons * 2 + howManyDaughter
 
+
+    
 fatherShare = 0
+motherShare = 0
 
 if isAliveGrandma == "y":
     grandmaShare = int(allMoneysGrandpa / 8)
@@ -31,11 +36,18 @@ class Grandma():
         print(grandmaShare)
 
 class Father():
-    def __init__(self, isAlive, fatherShare):
+    def __init__(self, isAlive, parentsShare):
         self.isAlive = isAlive
 
     def heredity(self):
-        print(fatherShare)
+        print(parentsShare * 2)
+        
+class Mother():
+    def __init__(self, isAlive, parentsShare):
+        self.isAlive = isAlive
+
+    def heredity(self):
+        print(parentsShare)
 class Son:
     def __init__(self, allMoney, howManySons, allShare):
         self.allMoney = allMoney
@@ -58,6 +70,12 @@ class Daughter:
 
 
 Ali = Grandpa(allMoneysGrandpa)
+
+if isAliveMother == 'y' and isAliveFather == 'y':
+    parentsShare = int(allMoneysGrandpa / 18)
+    allMoneysGrandpa = allMoneysGrandpa - parentsShare
+    father = Father(isAliveFather, parentsShare)
+    mother = Mother(isAliveMother, parentsShare)
 
 if howManySons != 0:
     sons = []
